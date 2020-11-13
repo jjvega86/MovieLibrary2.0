@@ -22,8 +22,9 @@ namespace WebAPISample.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var movies = _context.Movies.ToList();
             // Retrieve all movies from db logic
+
+            var movies = _context.Movies.ToList();
             return Ok(movies);
 
         }
@@ -34,7 +35,9 @@ namespace WebAPISample.Controllers
         {
             // Retrieve movie by id from db logic
             // return Ok(movie);
-            return Ok();
+            var movie = _context.Movies.Find(id);
+
+            return Ok(movie);
         }
 
         // POST api/movie
