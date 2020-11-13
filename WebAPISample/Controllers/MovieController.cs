@@ -69,9 +69,17 @@ namespace WebAPISample.Controllers
             // Delete movie from db logic
 
             var movieToDelete = _context.Movies.Find(id);
-            _context.Remove(movieToDelete);
-            _context.SaveChanges();
 
+            if(movieToDelete == null)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            else
+            {
+                _context.Remove(movieToDelete);
+                _context.SaveChanges();
+
+            }
 
             return Ok();
         }
