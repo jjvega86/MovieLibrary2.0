@@ -37,6 +37,11 @@ namespace WebAPISample.Controllers
             // return Ok(movie);
             var movie = _context.Movies.Find(id);
 
+            if (movie == null)
+            {
+                return NotFound(new { message = "Movie not found" });
+            }
+
             return Ok(movie);
         }
 
@@ -57,13 +62,23 @@ namespace WebAPISample.Controllers
         public IActionResult Put([FromBody] Movie movie)
         {
             // Update movie in db logic
-            _context.Update(movie);
-            _context.SaveChanges();
+            if (movie == null)
+            {
+                return NotFound(new { message = "Movie not found" });
+            }
+            else
+            {
+                _context.Update(movie);
+                _context.SaveChanges();
+
+            }
+            
             return Ok();
         }
 
         // DELETE api/movie/5
         [HttpDelete("{id}")]
+        
         public IActionResult Delete(int id)
         {
             // Delete movie from db logic
@@ -72,7 +87,7 @@ namespace WebAPISample.Controllers
 
             if(movieToDelete == null)
             {
-                throw new ArgumentOutOfRangeException();
+                return NotFound(new { message = "Movie not found" });
             }
             else
             {
