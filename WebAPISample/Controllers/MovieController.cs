@@ -26,8 +26,7 @@ namespace WebAPISample.Controllers
             // Retrieve all movies from db logic
 
             var movies = _context.Movies.ToList();
-            var jsonOutput = JsonConvert.SerializeObject(movies);
-            return Ok(jsonOutput);
+            return Ok(movies);
 
         }
 
