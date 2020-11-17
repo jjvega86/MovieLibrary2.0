@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebAPISample.Data;
 using WebAPISample.Models;
+using Newtonsoft.Json;
 
 namespace WebAPISample.Controllers
 {
@@ -25,7 +26,8 @@ namespace WebAPISample.Controllers
             // Retrieve all movies from db logic
 
             var movies = _context.Movies.ToList();
-            return Ok(movies);
+            var jsonOutput = JsonConvert.SerializeObject(movies);
+            return Ok(jsonOutput);
 
         }
 
