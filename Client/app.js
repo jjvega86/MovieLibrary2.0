@@ -35,6 +35,7 @@ $(document).ready(function(){
     
                     
                     $("#tbody").append(`
+             
                     <tr>
                     <td><p>${el.title}</p></td> 
                     <td><p>${el.director}</p></td>
@@ -45,6 +46,8 @@ $(document).ready(function(){
                 })
             })      
         });
+
+    
             
             
     

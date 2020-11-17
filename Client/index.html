@@ -4,7 +4,9 @@
     <title>Movie Library</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <!-- <meta http-equiv="refresh" content="10" /> -->
 </head>
 <body>
@@ -49,10 +51,24 @@
     </div>
 </div>
 
+<!-- Modal HTML embedded directly into document -->
+<div id="ex1" class="modal">
+    <p>Thanks for clicking. That felt good.</p>
+    <a href="#" rel="modal:close">Close</a>
+  </div>
+  
+<!-- Link to open the modal -->
+<p><a href="#ex1" rel="modal:open">Open Modal</a></p>
+
+
+
+
+
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <script type="text/javascript" src="./app.js"></script>
 </body>
 </html>
