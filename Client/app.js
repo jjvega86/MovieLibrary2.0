@@ -13,10 +13,11 @@ $(document).ready(function(){
                 type: 'post',
                 contentType: 'application/json',
                 data: JSON.stringify(dict),
-                success: function( data, textStatus, jQxhr ){
+                success: function( data ){
                     $('#response pre').html( data );
+
                 },
-                error: function( jqXhr, textStatus, errorThrown ){
+                error: function( errorThrown ){
                     console.log( errorThrown );
                 }
             });
@@ -24,7 +25,8 @@ $(document).ready(function(){
             e.preventDefault();
         }
     
-        $('#my-form').submit( processForm );
+        $('#my-form').submit( processForm);
+
     
         $(function(){
             $.get("https://localhost:44325/api/movie/", function(data){    
@@ -37,10 +39,7 @@ $(document).ready(function(){
                     <td><p>${el.title}</p></td> 
                     <td><p>${el.director}</p></td>
                     <td><p>${el.genre}</p></td>
-                    /* <td>ADD IMAGE BUTTON</td>
-                    <td>EDIT IMAGE BUTTON</td>
-                    <td>VIEW IMAGE BUTTON</td> */
-    
+                    <td><p>DELETE BUTTON</p></td>                 
                     </tr>`);
     
                 })
