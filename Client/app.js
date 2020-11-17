@@ -1,5 +1,4 @@
 $(document).ready(function(){
-   
     (function($){
         function processForm( e ){
             var dict = {
@@ -26,32 +25,38 @@ $(document).ready(function(){
         }
     
         $('#my-form').submit( processForm );
-
-        function getMovies( e ){
-            $.ajax({
-            url: 'https://localhost:44325/api/movie',
-            type: 'GET',
-            dataType: 'json',
-            success: function(movies){
-                movieListSuccess(movies);
-            },
-            error: function(request, message, error ){
-                handleException(request, message, error);
-            }
-
-
-
-            })
+    
+        $(function(){
+            $.get("https://localhost:44325/api/movie/", function(data){    
+    
+                data.map(function(el){
+    
+                    
+                    $("#tbody").append(`
+                    <tr>
+                    <td><p>${el.title}</p></td> 
+                    <td><p>${el.director}</p></td>
+                    <td><p>${el.genre}</p></td>
+                    /* <td>ADD IMAGE BUTTON</td>
+                    <td>EDIT IMAGE BUTTON</td>
+                    <td>VIEW IMAGE BUTTON</td> */
+    
+                    </tr>`);
+    
+                })
+            })      
+        });
             
             
-
-        }
+    
+        
     })(jQuery);
-
-
-
-
-
+   
 
 });
+
+
+
+
+
 
