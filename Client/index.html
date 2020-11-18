@@ -4,7 +4,6 @@
     <title>Movie Library</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <!-- <meta http-equiv="refresh" content="10" /> -->
@@ -27,8 +26,7 @@
             <form id="my-form">
                 <input type="text" name="title" placeholder="Title" />
                 <input type="text" name="director" placeholder="Director" />
-                <input type="text" name="genre" placeholder="Genre" />
-            
+                <input type="text" name="genre" placeholder="Genre" />            
                 <button type="submit">Submit</button>
             </form>
         </div>
@@ -51,24 +49,35 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-md-12 text-center">
+        <br/>
+        
+</div>
+<br>
+
 <!-- Modal HTML embedded directly into document -->
 <div id="ex1" class="modal">
-    <p>Thanks for clicking. That felt good.</p>
+    <h3>Update Movie!</h3>
+        <div id="response2">
+            <pre></pre>
+        </div> 
+        <form id="my-form2">
+            <input type="text" name="title" placeholder="Title" />
+            <input type="text" name="director" placeholder="Director" />
+            <input type="text" name="genre" placeholder="Genre" />            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
     <a href="#" rel="modal:close">Close</a>
   </div>
   
 <!-- Link to open the modal -->
 <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
 
-
-
-
-
-
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./app.js"></script>
 </body>
 </html>
